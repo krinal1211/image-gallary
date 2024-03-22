@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Gallery</title>
+    <link rel="stylesheet" href="project1.css">
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
+<style>body {
+    font-family: 'Sofia';
+    font-size: 22px;
+    background-color: rgb(255, 255, 255);
+}
+
+h1 {
+    text-align: center;
+    color: azure;
+}
+
+.header {
+    background-image: url(header.png);
+    border: 2px solid rgb(255, 255, 255);
+    background-color: black;
+    box-shadow: 2px 2px 5px black;
+    margin-bottom: 1%;
+}
+
+.image-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.image-container {
+    margin: 10px;
+}
+
+img {
+    height: 250px;
+    width: 300px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 10px rgb(0, 0, 0);
+    transition: transform 0.3s ease;
+    cursor: pointer; /* Add pointer cursor to indicate clickable */
+}
+
+img:hover {
+    transform: scale(1.1); /* Add a slight scale effect on hover */
+}
+
+img.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    z-index: 9999;
+    cursor: zoom-out;
+}
+</style>
+</head>
+<body>
+    <div class="header">
+        <h1>Image gallery</h1>
+    </div>
+    <div class="image-gallery">
+        <div class="image-container">
+            <img src="nat1.jpg" alt="">
+        </div>
+        <div class="image-container">
+            <img src="nat2.jpg" alt="">
+        </div>
+        <div class="image-container">
+            <img src="nat3.jpg" alt="">
+        </div>
+        <div class="image-container">
+            <img src="nat_night1.jpg" alt="">
+        </div>
+        <div class="image-container">
+            <img src="event.jpg" alt="">
+        </div>
+        <div class="image-container">
+            <img src="event2.jpg" alt="">
+        </div>
+        <div class="image-container">
+            <img src="event3.jpg" alt="">
+        </div>
+        <div class="image-container">
+            <img src="event4.jpg" alt="">
+        </div>
+        <div class="image-container">
+            <img src="event5.png" alt="">
+        </div>
+        <div class="image-container">
+            <img src="black.jpg" alt="">
+        </div>
+        <div class="image-container">
+            <img src="nat1.jpg" alt="">
+        </div>
+        <div class="image-container">
+            <img src="nat2.jpg" alt="">
+        </div>
+    </div>
+
+
+
+    <script>
+document.addEventListener('DOMContentLoaded',function() 
+{
+    const images=document.querySelectorAll('.image-container img')
+    images.forEach(img=>{
+        img.addEventListener('click',()=>{
+            img.classList.toggle('fullscreen')
+        });
+    });
+
+});</script>
+
+
+
+</body>
+</html>
